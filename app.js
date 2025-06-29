@@ -17,7 +17,7 @@ app.post("/api/auth", (req, res) => {
   console.log("Received auth request:", req.body);
   const { name, password } = req.body;
   const found = users.find(u => u.name === name && u.password === password);
-  res.json({ success: !!found });
+  res.status(200).json({ success: !!found });
 });
 
 app.post("/api/register", (req, res) => {
